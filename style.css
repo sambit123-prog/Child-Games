@@ -1,24 +1,30 @@
 
+
 BODY {
   font-family: "ROBOTO CONDENSED",sans-serif;
   font-weight:300;
   background: rgba(255,200,100,.5);
-  color:#0af;
-  margin:0px;
+  color:#0f0;
+  margin:10px;
+}
+span{
+  border: 1px outset;
 }
 body h1
 {
   color:#ff0000;
   font-weight:1000;
 }
-ol {
-  background :white;
-  color: green;
+body h1
+{
+  font-color:100;
 }
-
  #main-header {
      border: 1px outset #000;
      border-top: none;
      background: blue;
-
+ }
+ footer{
+     background: rgba(255,200,100,.5);
+     background-color: white;
  }
