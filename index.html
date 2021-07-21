@@ -7,73 +7,106 @@
 
        <link rel="stylesheet" href="style.css"/>
     </HEAD>
-    <BODY>
+    <BODY >
+
         <center><header id="main-header"><h1>MINGROLL</h1></header> </center>
-        <MARQUEE direction="right"><DIV><I>"EXPLORING THE VEGETABLE'S COST AT YOUR DOOR STEP"</I></DIV></MARQUEE>
-
-        <p>we connect</a> with lives across different places in India. <B>with our safe and secure services.</B></p>
-        <p>WELCOME TO MINGROLL,THE SAFEST SHOPPING SITE IN INDIA</p>
-        <div> ITEMS </div>
-        <ol>
-          <li>VEGETABLES
-              <ul>
-                 <li>onion<br/>
-                   <img width="10%" src="onion.jpg"/>
-                 </li>
-                 <li>potato<br/ >
-                   <img width="10%" src="Potatoes.jpg"/>
-                 </li>
-                 <li>tomato<br/>
-                   <img width="10%" src="tomato.jpg"/>
-                 </li>
-              </ul>
-          </li>
-        </ol>
+               <center><h2>"Making the shopping easier"</h2></center>
+        <br/>
         <main>
+        <center>
+          <span class="tab" >
+                <button class="tablinks" onclick="ourinfo(event, 'details')">OUR OFFICES</button>
+          </span>
+          <span class="tab" style="padding-left:10em;">
+            <button class="tablinks" onclick="openCity(event, 'Motive')">IMAGES</button>
+          </span>
+          <span class="tab" style="padding-left:10em;">
+                <button class="tablinks" onclick="openCity(event, '---')">ABOUT</button>
+          </span>
+          <span class="tab" style="padding-left:10em;">
+                <button class="tablinks" onclick="openCity(event, '---')">STATEWISE COST</button>
+          </span>
+        </center>
 
-             <table width="100%"border="1px">
+           <center>
+              <table width="50%"border="1px">
                    <thead>
                      <h1><U>VEGETABLE PRICE IN INDIA</U></h1>
-                     <h2>DATE:19th July,2021</h2>
+                     <h2>
+                       <button type="button"
+                        onclick="document.getElementById('demo').innerHTML = Date()">
+                        Date and Time.
+                      </button>
+                      <p id="demo"></p>
+                     </h2>
                       <tr>
                        <th width>Item name</th>
                        <th>cost/kg or doz</th>
                        <th>PRICE(INR)</th>
                       </tr>
                       <tr>
-                         <td>ONION</td>
+                         <td>ONION<br/>
+                         <img width="10%" src="onion.jpg"/>
+                         </td>
                          <td>30/doz</td>
                          <td>2 kg</td>
                       </tr>
                       <tr>
-                         <td>POTATO</td>
+                         <td>POTATO<br/>
+                           <img width="10%" src="Potatoes.jpg"/>
+                         </td>
                          <td>45/doz</td>
                          <td>8 kg</td>
                      </tr>
                      <tr>
-                       <td>TOMATO</td>
+                    <td>TOMATO<br/>
+                       <img width="10%" src="tomato.jpg"/>
+                     </td>
                        <td>35/doz</td>
                        <td>8 kg</td>
                     </tr>
                 </thead>
               </table>
+          </center>
               <section id="FEEL FREE TO ASK YOUR QUESTION">
-                      <h4>QUERY</h4>
+                      <h4 >QUERY</h4>
                             <form method="GET" action="query.php">
                                 <input name="Place" placeholder="your query" class="lg-input"/><br />
                                 <input name="Personal" placeholder="your mail_d" class="lg-input"/><br />
                                 <input name="Personal" placeholder="your phone_no" class="lg-input"/><br />
-                                <h4> feedback </h4>
-                                <input name="feedback" type="radio" value="Excellent"/>5<br />
-                                <input name="feedback" type="radio" value="VERY GOOD"/>4<br />
-                                <input name="feedback" type="radio" value="SATISFACTORY"/>3<br />
-                                <input name="feedback" type="radio" value="SATISFACTORY"/>2<br />
-                                <input name="feedback" type="radio" value="SATISFACTORY"/>1<br />
+                                <br />
+                                <button type="submit">submit</button>
+                                <br/>
+                                <span>
+                                  <h4> feedback </h4>
+                                  <input name="feedback" type="radio" value="Excellent"/>5
+                                </span>
+                                 <span>
+                                   <input name="feedback" type="radio" value="VERY GOOD"/>4
+                                </span>
+                                <span>
+                                   <input name="feedback" type="radio" value="GOOD"/>3
+                                </span>
+                                <span>
+                                    <input name="feedback" type="radio" value="BAD"/>2
+                                <span>
+                                    <input name="feedback" type="radio" value="NOT SATISFACTORY"/>1
+                                </span>
                                 <br><br/>
                                 <button type="submit">submit</button>
                             </form>
 
              </section>
           </main>
-   <footer>&copy;copyright &nbsp;2017</footer>
+          <br/>
+   <footer>&copy;copyright &nbsp;2017
+<span>
+     <li><a href="beneit.html">benfit of vegetables</a></li>
+     <li><a href="seasonal.html">seasonal vegetables</a></li>
+</span>
+<span>
+     <li><a href="images.html">IMAGES</a></li>
+</span>
+</footer>
 </HTML>
+
