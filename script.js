@@ -1,64 +1,78 @@
 // script.js
 
-// Define the game board (snake and ladder positions)
-const board = {
-    16: 6,
-    47: 26,
-    49: 11,
-    56: 53,
-    62: 19,
-    64: 60,
-    87: 24,
-    93: 73,
-    95: 75,
-    98: 78
-};
+let score = 0;
+let currentQuestion = 0;
+let selectedOperation = 'addition'; // Default operation
 
-// Initialize player position
-let playerPosition = 0;
+let correctAnswer = 0; // Define correctAnswer variable globally
 
-// Function to roll the dice
-function rollDice() {
-    const diceRoll = Math.floor(Math.random() * 6) + 1;
-    movePlayer(diceRoll);
+function generateQuestion() {
+    const num1 = Math.floor(Math.random() * 90) + 10; // Generate 2-digit numbers
+    const num2 = Math.floor(Math.random() * 90) + 10;
+    let questionText = '';
+
+    switch(selectedOperation) {
+        case 'addition':
+            questionText = `${num1} + ${num2}`;
+            correctAnswer = num1 + num2;
+            break;
+        case 'subtraction':
+            questionText = `${num1} - ${num2}`;
+            correctAnswer = num1 - num2;
+            break;
+        case 'multiplication':
+            questionText = `${num1} * ${num2}`;
+            correctAnswer = num1 * num2;
+            break;
+        case 'division':
+            questionText = `${num1} / ${num2}`;
+            correctAnswer = Math.floor(num1 / num2); // For simplicity, round division down to nearest whole number
+            break;
+    }
+
+    document.getElementById('question').textContent = questionText;
 }
 
-// Function to move the player token on the board
-function movePlayer(steps) {
-    playerPosition += steps;
-    if (board[playerPosition]) {
-        // If the player lands on a snake or ladder, move to the corresponding position
-        playerPosition = board[playerPosition];
-    }
-    if (playerPosition >= 100) {
-        // If the player reaches or exceeds position 100, they win
-        setMessage('Congratulations! You win the game!');
-        disableRollButton();
+function checkAnswer() {
+    const userAnswer = parseInt(document.getElementById('user-answer').value);
+
+    if (!isNaN(userAnswer) && userAnswer === correctAnswer) {
+        score++;
+        document.getElementById('result').textContent = 'Correct!';
+        document.getElementById('result').style.color = 'green';
     } else {
-        setMessage(`You rolled a ${steps}. You are now on position ${playerPosition}.`);
+        document.getElementById('result').textContent = 'Incorrect! Try again.';
+        document.getElementById('result').style.color = 'red';
     }
-    updateBoard();
+
+    document.getElementById('score-value').textContent = score;
+    currentQuestion++;
+
+    if (currentQuestion >= 10) {
+        document.getElementById('question').textContent = 'Game Over!';
+        document.getElementById('user-answer').disabled = true;
+        document.getElementById('score').textContent = 'Final Score: ' + score;
+    } else {
+        generateQuestion(); // Generate new question after checking answer
+    }
 }
 
-// Function to update the game board with player's token position
-function updateBoard() {
-    const cells = document.querySelectorAll('.cell');
-    cells.forEach((cell, index) => {
-        cell.textContent = index + 1;
-        if (index + 1 === playerPosition) {
-            const token = document.createElement('div');
-            token.classList.add('token');
-            cell.appendChild(token);
-        }
-    });
+
+function selectOperation(operation) {
+    selectedOperation = operation;
+    currentQuestion = 0;
+    score = 0;
+    document.getElementById('score-value').textContent = score;
+    document.getElementById('user-answer').disabled = false;
+    document.getElementById('result').textContent = '';
+    generateQuestion();
 }
 
-// Function to display message
-function setMessage(message) {
-    document.getElementById('message').innerText = message;
-}
-
-// Function to disable the roll dice button
-function disableRollButton() {
-    document.querySelector('button').disabled = true;
+function restartGame() {
+    currentQuestion = 0;
+    score = 0;
+    document.getElementById('score-value').textContent = score;
+    document.getElementById('user-answer').disabled = false;
+    document.getElementById('result').textContent = '';
+    generateQuestion();
 }

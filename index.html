@@ -2,23 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake and Ladder Game</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Game</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div class="game-container">
-        <h1>Snake and Ladder Game</h1>
-        <div id="board" class="board">
-            <!-- The game board will be generated here -->
-        </div>
-        <button onclick="rollDice()">Roll Dice</button>
-        <p id="message"></p>
+<body>-
+  <div id="container">
+    <h1>Math Game</h1>
+    <div id="question"></div>
+    <input type="number" id="user-answer">
+    <button onclick="checkAnswer()">Check</button>
+    <div id="result"></div>
+    <div id="score">Score: <span id="score-value">0</span></div>
+    <div id="operations">
+      <button onclick="selectOperation('addition')">Addition</button>
+      <button onclick="selectOperation('subtraction')">Subtraction</button>
+      <button onclick="selectOperation('multiplication')">Multiplication</button>
+      <button onclick="selectOperation('division')">Division</button>
     </div>
-
-    <script src="script.js"></script>
+    <button onclick="restartGame()">Restart</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
