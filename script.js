@@ -11,7 +11,7 @@ function generateQuestion() {
     const num2 = Math.floor(Math.random() * 90) + 10;
     let questionText = '';
 
-    switch(selectedOperation) {
+    switch (selectedOperation) {
         case 'addition':
             questionText = `${num1} + ${num2}`;
             correctAnswer = num1 + num2;
@@ -75,4 +75,4 @@ function restartGame() {
     document.getElementById('user-answer').disabled = false;
     document.getElementById('result').textContent = '';
     generateQuestion();
-}
+} 
