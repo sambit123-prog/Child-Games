@@ -1,191 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>MINGROLL</title>
   <meta charset="UTF-8">
-  <meta name="description" content="This page is to make people aware of the current vegetable price">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Game</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h2 {
-      color: #666;
-      font-style: italic;
-      margin-top: 0;
-    }
-
-    table {
-      width: 70%;
-      margin: 20px auto;
-      border-collapse: collapse;
-    }
-
-    th,
-    td {
-      padding: 10px;
-      text-align: center;
-      border: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #4CAF50;
-      color: white;
-    }
-
-    img {
-      max-width: 100px;
-      height: auto;
-    }
-
-    section {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="submit"],
-    input[type="radio"] {
-      padding: 10px;
-      margin: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 10px;
-      text-align: center;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    footer span {
-      margin-left: 20px;
-    }
-
-    footer li {
-      display: inline;
-      margin-right: 10px;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-    }
-  </style>
 </head>
 
-<body>
-  <header>
-    <h1>MINGROLL</h1>
-    <h2>"Making the shopping easier"</h2>
-  </header>
-  <main>
-    <center>
-      <span class="tab">
-        <button class="tablinks" onclick="ourinfo(event, 'details')">OUR OFFICES</button>
-      </span>
-      <span class="tab" style="padding-left:10em;">
-        <button class="tablinks" onclick="openCity(event, 'Motive')">IMAGES</button>
-      </span>
-      <span class="tab" style="padding-left:10em;">
-        <button class="tablinks" onclick="openCity(event, '---')">ABOUT</button>
-      </span>
-      <span class="tab" style="padding-left:10em;">
-        <button class="tablinks" onclick="openCity(event, '---')">STATEWISE COST</button>
-      </span>
-    </center>
-    <center>
-      <table>
-        <thead>
-          <h1><u>VEGETABLE PRICE IN INDIA</u></h1>
-          <h2>
-            <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Date and Time.</button>
-            <p id="demo"></p>
-          </h2>
-          <tr>
-            <th>Item name</th>
-            <th>Cost/kg or doz</th>
-            <th>PRICE(INR)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>ONION<br /><img src="onion.jpg" alt="Onion"></td>
-            <td>30/doz</td>
-            <td>2 kg</td>
-          </tr>
-          <tr>
-            <td>POTATO<br /><img src="Potatoes.jpg" alt="Potato"></td>
-            <td>45/doz</td>
-            <td>8 kg</td>
-          </tr>
-          <tr>
-            <td>TOMATO<br /><img src="tomato.jpg" alt="Tomato"></td>
-            <td>35/doz</td>
-            <td>8 kg</td>
-          </tr>
-        </tbody>
-      </table>
-    </center>
-    <section id="FEEL FREE TO ASK YOUR QUESTION">
-      <h4>QUERY</h4>
-      <form method="GET" action="query.php">
-        <input name="Place" placeholder="Your query" class="lg-input"><br>
-        <input name="Personal" placeholder="Your email" class="lg-input"><br>
-        <input name="Personal" placeholder="Your phone number" class="lg-input"><br><br>
-        <button type="submit">Submit</button><br><br>
-        <h4>Feedback</h4>
-        <input name="feedback" type="radio" value="Excellent">5
-        <input name="feedback" type="radio" value="Very Good">4
-        <input name="feedback" type="radio" value="Good">3
-        <input name="feedback" type="radio" value="Bad">2
-        <input name="feedback" type="radio" value="Not Satisfactory">1
-        <br><br>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-  </main>
-  <footer>&copy; 2017
-    <span>
-      <li><a href="benefit.html">Benefit of vegetables</a></li>
-      <li><a href="seasonal.html">Seasonal vegetables</a></li>
-    </span>
-    <span>
-      <li><a href="images.html">Images</a></li>
-    </span>
-  </footer>
+<body>-
+  <div id="container">
+    <h1>Math Game</h1>
+    <div id="question"></div>
+    <input type="number" id="user-answer">
+    <button onclick="checkAnswer()">Check</button>
+    <div id="result"></div>
+    <div id="score">Score: <span id="score-value">0</span></div>
+    <div id="operations">
+      <button onclick="selectOperation('addition')">Addition</button>
+      <button onclick="selectOperation('subtraction')">Subtraction</button>
+      <button onclick="selectOperation('multiplication')">Multiplication</button>
+      <button onclick="selectOperation('division')">Division</button>
+    </div>
+    <button onclick="restartGame()">Restart</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 
-</html>
+</html> 
