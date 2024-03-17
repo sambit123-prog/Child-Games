@@ -73,3 +73,78 @@ button:hover {
   background-color: #ffffff; /* White */
 }
     
+/*
+*/
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+#container {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#math-operations {
+  margin-bottom: 20px;
+}
+
+#question {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#user-answer {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100px;
+}
+
+#result {
+  margin-top: 10px;
+}
+
+#score {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+#operation-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#operation-buttons button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#table-button {
+  margin-bottom: 20px;
+}
+
+#chat-button button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}

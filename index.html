@@ -12,25 +12,25 @@
 <body>
   <div id="container">
     <h1>Math Game</h1>
-    <div id="question"></div>
-    <input type="number" id="user-answer">
-    <button onclick="checkAnswer()">Check</button>
-    <div id="result"></div>
-    <div id="score">Score: <span id="score-value">0</span></div>
-    <div id="operations">
+    <div id="math-operations">
+      <div id="question"></div>
+      <input type="number" id="user-answer">
+      <button onclick="checkAnswer()">Check</button>
+      <div id="result"></div>
+      <div id="score">Score: <span id="score-value">0</span></div>
+    </div>
+    <div id="operation-buttons">
       <button onclick="selectOperation('addition')">Addition</button>
       <button onclick="selectOperation('subtraction')">Subtraction</button>
       <button onclick="selectOperation('multiplication')">Multiplication</button>
       <button onclick="selectOperation('division')">Division</button>
     </div>
-    <button onclick="restartGame()">Restart</button>
-    
-    <!-- Button for redirecting to tables page -->
-    <a href="tables.html" target="_blank"><button class="table-button">Show Multiplication Tables</button></a>
-    
-    <!-- Button to activate chatbot -->
-    <button id="chat-button">Need Help?</button>
-    
+    <div id="table-button">
+      <a href="tables.html" target="_blank"><button class="table-button">Show Multiplication Tables</button></a>
+    </div>
+    <div id="chat-button">
+      <button onclick="activateChatbot()">Need Help?</button>
+    </div>
     <!-- Chatbot container -->
     <div id="chat-container" style="display: none;"></div>
   </div>
@@ -83,10 +83,6 @@
             initChatbot(botui);
         });
     }
-
-    // Add event listener to activate chatbot button
-    document.getElementById('chat-button').addEventListener('click', activateChatbot);
   </script>
 </body>
 </html>
-//
