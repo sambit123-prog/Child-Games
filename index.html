@@ -1,88 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Math Game</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Include BotUI library -->
-  <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/botui/build/botui.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Game</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include BotUI library -->
+    <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/botui/build/botui.min.css" rel="stylesheet">
 </head>
+
 <body>
-  <div id="container">
-    <h1>Math Game</h1>
-    <div id="math-operations">
-      <div id="question"></div>
-      <input type="number" id="user-answer">
-      <button onclick="checkAnswer()">Check</button>
-      <div id="result"></div>
-      <div id="score">Score: <span id="score-value">0</span></div>
+    <div id="container">
+        <h1 class="header">Math Game</h1>
+        <div id="math-operations">
+            <div id="question"></div>
+            <input type="number" id="user-answer">
+            <button onclick="checkAnswer()">Check</button>
+            <div id="result"></div>
+            <div id="score">Score: <span id="score-value">0</span></div>
+        </div>
+        <div id="operation-buttons">
+            <button onclick="selectOperation('addition')">Addition</button>
+            <button onclick="selectOperation('subtraction')">Subtraction</button>
+            <button onclick="selectOperation('multiplication')">Multiplication</button>
+            <button onclick="selectOperation('division')">Division</button>
+        </div>
+        <div id="table-button">
+            <a href="tables.html" target="_blank"><button class="table-button">Show Multiplication Tables</button></a>
+        </div>
+        <div id="chat-button">
+            <button onclick="activateChatbot()">Need Help?</button>
+        </div>
+        <!-- Chatbot container -->
+        <div id="chat-container" style="display: none;"></div>
     </div>
-    <div id="operation-buttons">
-      <button onclick="selectOperation('addition')">Addition</button>
-      <button onclick="selectOperation('subtraction')">Subtraction</button>
-      <button onclick="selectOperation('multiplication')">Multiplication</button>
-      <button onclick="selectOperation('division')">Division</button>
-    </div>
-    <div id="table-button">
-      <a href="tables.html" target="_blank"><button class="table-button">Show Multiplication Tables</button></a>
-    </div>
-    <div id="chat-button">
-      <button onclick="activateChatbot()">Need Help?</button>
-    </div>
-    <!-- Chatbot container -->
-    <div id="chat-container" style="display: none;"></div>
-  </div>
-  <script src="script.js"></script>
-  <!-- Script for chatbot -->
-  <script>
-    // Function to activate chatbot
-    function activateChatbot() {
-        // Hide the chatbot activation button
-        document.getElementById('chat-button').style.display = 'none';
+    <script src="script.js"></script>
+    <!-- Script for chatbot -->
+    <script>
+        // Function to activate chatbot
+        function activateChatbot() {
+            // Hide the chatbot activation button
+            document.getElementById('chat-button').style.display = 'none';
 
-        // Show the chatbot container
-        document.getElementById('chat-container').style.display = 'block';
+            // Show the chatbot container
+            document.getElementById('chat-container').style.display = 'block';
 
-        // Initialize BotUI
-        const botui = new BotUI('chat-container');
+            // Initialize BotUI
+            const botui = new BotUI('chat-container');
 
-        // Display initial message
-        botui.message.add({
-            content: 'Welcome to the Math Game chatbot! How can I assist you today?'
-        });
-
-        // Start chat loop
-        initChatbot(botui);
-    }
-
-    // Define chat loop
-    function initChatbot(botui) {
-        botui.action.text({
-            action: {
-                placeholder: 'Type your message here...'
-            }
-        }).then((res) => {
-            // Handle user input here
-            const userMessage = res.value;
-
-            // Example: echo user input
+            // Display initial message
             botui.message.add({
-                human: true,
-                content: userMessage
+                content: 'Welcome to the Math Game chatbot! How can I assist you today?'
             });
 
-            // Example: provide automatic response
-            botui.message.add({
-                delay: 500,
-                content: 'Thank you for your message. I will assist you shortly.'
-            });
-
-            // Recursive call to continue conversation
+            // Start chat loop
             initChatbot(botui);
-        });
-    }
-  </script>
+        }
+
+        // Define chat loop
+        function initChatbot(botui) {
+            botui.action.text({
+                action: {
+                    placeholder: 'Type your message here...'
+                }
+            }).then((res) => {
+                // Handle user input here
+                const userMessage = res.value;
+
+                // Example: echo user input
+                botui.message.add({
+                    human: true,
+                    content: userMessage
+                });
+
+                // Example: provide automatic response
+                botui.message.add({
+                    delay: 500,
+                    content: 'Thank you for your message. I will assist you shortly.'
+                });
+
+                // Recursive call to continue conversation
+                initChatbot(botui);
+            });
+        }
+    </script>
 </body>
+
 </html>

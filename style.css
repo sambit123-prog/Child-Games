@@ -2,83 +2,6 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #e6f7ff; /* Light blue background */
-  margin: 0;
-  padding: 0;
-}
-
-#container {
-  width: 90%; /* Adjusted width for smartphone size */
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #ffffff; /* White container background */
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for container */
-}
-
-h1 {
-  color: #3366ff; /* Dark blue heading color */
-}
-
-label {
-  font-weight: bold;
-}
-
-input[type="number"] {
-  padding: 5px;
-  margin: 10px 0;
-}
-
-button {
-  padding: 10px 20px;
-  margin-top: 10px;
-  cursor: pointer;
-  background-color: #000000; /* Black button color */
-  color: white; /* Button text color */
-  border: none;
-  border-radius: 5px;
-}
-
-button:hover {
-  background-color: #333333; /* Darker black on hover */
-}
-
-#table-container {
-  margin-top: 20px;
-  padding: 10px;
-  border: 2px solid #000000; /* Black border */
-  border-radius: 10px;
-}
-
-#table-container table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-#table-container td {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #ccc;
-  text-align: center;
-  padding: 5px;
-}
-
-/* Apply background color to cells */
-#table-container td:nth-child(odd) {
-  background-color: #f2f2f2; /* Light gray */
-}
-
-#table-container td:nth-child(even) {
-  background-color: #ffffff; /* White */
-}
-    
-/*
-*/
-/* style.css */
-
-body {
-  font-family: Arial, sans-serif;
   background-color: #f0f0f0;
 }
 
@@ -136,8 +59,25 @@ h1 {
   border-radius: 5px;
 }
 
+#operation-buttons button:hover {
+  background-color: #45a049; /* Darker shade on hover */
+}
+
 #table-button {
   margin-bottom: 20px;
+}
+
+#table-button button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4CAF50; /* Matching the button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#table-button button:hover {
+  background-color: #45a049; /* Darker shade on hover */
 }
 
 #chat-button button {
@@ -147,4 +87,57 @@ h1 {
   color: white;
   border: none;
   border-radius: 5px;
+}
+
+/* Multiplication Tables Page Styling */
+
+#number-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#number-grid button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #4CAF50; /* Matching the button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+#number-grid button:hover {
+  background-color: #45a049; /* Darker shade on hover */
+}
+
+#table-container {
+  margin-top: 20px;
+  padding: 10px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  background-color: #ffffff; /* White background */
+}
+
+#table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#table-container td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 5px;
+}
+
+/* Apply background color to cells */
+#table-container td:nth-child(odd) {
+  background-color: #f2f2f2; /* Light gray */
+}
+
+#table-container td:nth-child(even) {
+  background-color: #ffffff; /* White */
 }
