@@ -1,5 +1,3 @@
-// script.js
-
 let score = 0;
 let currentQuestion = 0;
 let selectedOperation = 'addition'; // Default operation
@@ -57,7 +55,6 @@ function checkAnswer() {
     }
 }
 
-
 function selectOperation(operation) {
     selectedOperation = operation;
     currentQuestion = 0;
@@ -75,4 +72,69 @@ function restartGame() {
     document.getElementById('user-answer').disabled = false;
     document.getElementById('result').textContent = '';
     generateQuestion();
-} 
+}
+
+function goBack() {
+    window.location.href = "index.html";
+}
+
+// script.js
+
+function showOperationOptions() {
+    document.getElementById('operation-options').style.display = 'block';
+    document.getElementById('table-options').style.display = 'none';
+}
+
+function showTableOptions() {
+    document.getElementById('table-options').style.display = 'block';
+    document.getElementById('operation-options').style.display = 'none';
+}
+function goBack() {
+    window.location.href = "index.html";
+}
+
+function goBack() {
+    window.location.href = "index.html";
+}
+
+function goBack() {
+    window.location.href = "index.html";
+}
+
+function generateTable(number) {
+    const tableContainer = document.getElementById('table-container');
+    tableContainer.innerHTML = ''; // Clear previous table content
+    
+    const table = document.createElement('table');
+    const tbody = document.createElement('tbody');
+
+    for (let i = 1; i <= 10; i++) {
+        const row = document.createElement('tr');
+        const cell = document.createElement('td');
+        cell.textContent = `${number} x ${i} = ${number * i}`;
+        row.appendChild(cell);
+        tbody.appendChild(row);
+    }
+
+    table.appendChild(tbody);
+    tableContainer.appendChild(table);
+}
+
+
+
+function goBack() {
+    window.location.href = "index.html";
+}
+
+
+function getRandomColor() {
+    // Generate random RGB values
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    // Return RGB value in hexadecimal format
+    return '#' + r.toString(16).padStart(2, '0') + g.toString(16).padStart(2, '0') + b.toString(16).padStart(2, '0');
+}
+
+
+
