@@ -2,41 +2,73 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #e6f7ff; /* Light blue background */
+  margin: 0;
+  padding: 0;
 }
- 
 
 #container {
-  width: 300px;
-  margin: 50px auto;
+  width: 90%; /* Adjusted width for smartphone size */
+  margin: 20px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #ffffff; /* White container background */
   border-radius: 10px;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for container */
+}
+
+h1 {
+  color: #3366ff; /* Dark blue heading color */
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="number"] {
+  padding: 5px;
+  margin: 10px 0;
 }
 
 button {
   padding: 10px 20px;
   margin-top: 10px;
   cursor: pointer;
+  background-color: #000000; /* Black button color */
+  color: white; /* Button text color */
+  border: none;
+  border-radius: 5px;
 }
 
-#result {
-  margin-top: 10px;
+button:hover {
+  background-color: #333333; /* Darker black on hover */
 }
 
-#score {
+#table-container {
   margin-top: 20px;
-  font-weight: bold;
+  padding: 10px;
+  border: 2px solid #000000; /* Black border */
+  border-radius: 10px;
 }
 
-#question {
-  font-size: 20px;
-  margin-bottom: 10px;
+#table-container table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-#user-answer {
-  margin-bottom: 10px;
+#table-container td {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+  text-align: center;
   padding: 5px;
-  width: 100px;
+}
+
+/* Apply background color to cells */
+#table-container td:nth-child(odd) {
+  background-color: #f2f2f2; /* Light gray */
+}
+
+#table-container td:nth-child(even) {
+  background-color: #ffffff; /* White */
 }
